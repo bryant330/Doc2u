@@ -32,7 +32,6 @@ public class ProfileActivity extends AppCompatActivity {
     TextView area;
     TextView speciality;
     TextView currency;
-    TextView rate;
     TextView experience;
     TextView description;
     NetworkImageView thumbnail;
@@ -54,7 +53,6 @@ public class ProfileActivity extends AppCompatActivity {
         area = (TextView) findViewById(R.id.area);
         speciality = (TextView) findViewById(R.id.speciality);
         currency = (TextView) findViewById(R.id.currency);
-        rate = (TextView) findViewById(R.id.rate);
         experience = (TextView) findViewById(R.id.experience);
         description = (TextView) findViewById(R.id.description);
         thumbnail = (NetworkImageView) findViewById(R.id.thumbnail);
@@ -78,14 +76,13 @@ public class ProfileActivity extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 try {
                     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
-                    recommendation.setText(response.getString("recommendation"));
-                    schedule.setText(response.getString("schedule"));
+                    recommendation.setText(response.getString("recommendation") + "\n Recommendations");
+                    schedule.setText("Schedule on \n" + response.getString("schedule"));
                     name.setText(response.getString("name"));
                     area.setText(response.getString("area"));
                     speciality.setText(response.getString("speciality"));
-                    currency.setText(response.getString("currency"));
-                    rate.setText(response.getString("rate"));
-                    experience.setText(response.getString("experience"));
+                    currency.setText(response.getString("currency") + " " +response.getString("rate"));
+                    experience.setText(response.getString("experience") + " Years experience");
                     description.setText(response.getString("description"));
                     latitude = response.getDouble("latitude");
                     longtitude = response.getDouble("longitute");

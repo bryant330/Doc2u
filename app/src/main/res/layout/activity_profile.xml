@@ -11,100 +11,119 @@
     tools:context="com.example.hou.doc2u.app.ProfileActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- Thumbnail images -->
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <!-- Recommendation -->
+            <TextView
+                android:id="@+id/recommendation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="30sp"
+                android:textAlignment="center"/>
+
+            <!-- Schedule -->
+            <TextView
+                android:id="@+id/schedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/recommendation"
+                android:textSize="26sp"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+
+
     </LinearLayout>
-    <!-- Thumbnail images -->
-    <com.android.volley.toolbox.NetworkImageView
-        android:id="@+id/thumbnail"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="8dp" />
 
-    <!-- Recommendation -->
-    <TextView
-        android:id="@+id/recommendation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/thumbnail"
-        android:layout_toRightOf="@+id/thumbnail" />
-
-    <!-- Schedule -->
-    <TextView
-        android:id="@+id/schedule"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:layout_below="@+id/recommendation"
-        android:layout_toRightOf="@+id/thumbnail" />
-
-    <!-- Name -->
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_marginTop="10dp"
-        android:layout_alignStart="@+id/thumbnail"
-        android:layout_below="@+id/thumbnail" />
+        android:orientation="vertical"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Name -->
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_alignStart="@+id/thumbnail"
+            android:textSize="24sp" />
 
-    <!-- Area -->
-    <TextView
-        android:id="@+id/area"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/name"
-        android:layout_marginTop="1dip" />
+        <!-- Area -->
+        <TextView
+            android:id="@+id/area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_marginTop="5dip" />
 
-    <!-- Speciality -->
-    <TextView
-        android:id="@+id/speciality"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/area"
-        android:layout_marginTop="1dip" />
+        <!-- Speciality -->
+        <TextView
+            android:id="@+id/speciality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/area"
+            android:layout_marginTop="5dip" />
 
-    <!-- Currency -->
-    <TextView
-        android:id="@+id/currency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/speciality"
-        android:layout_marginTop="1dip" />
+        <!-- Currency -->
+        <TextView
+            android:id="@+id/currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/speciality"
+            android:layout_marginTop="5dip" />
 
-    <!-- Rate -->
-    <TextView
-        android:id="@+id/rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/speciality"
-        android:layout_marginTop="1dip"
-        android:layout_marginLeft="8dp"
-        android:layout_toRightOf="@+id/currency" />
+        <!-- Experience -->
+        <TextView
+            android:id="@+id/experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/currency"
+            android:layout_marginTop="5dip" />
 
-    <!-- Experience -->
-    <TextView
-        android:id="@+id/experience"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/currency"
-        android:layout_marginTop="1dip" />
+        <!-- Description -->
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/experience"
+            android:layout_marginTop="5dip" />
 
-    <!-- Description -->
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/experience"
-        android:layout_marginTop="1dip" />
+        <!-- Location -->
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/description"
+            android:text="Location on maps"
+            android:layout_marginTop="5dip" />
+    </LinearLayout>
 
     <!-- Map -->
     <fragment
         android:id="@+id/map"
-        android:layout_below="@+id/description"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_marginTop="5dp"
         android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
