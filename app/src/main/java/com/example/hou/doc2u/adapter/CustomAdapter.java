@@ -2,6 +2,7 @@ package com.example.hou.doc2u.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,6 +77,11 @@ public class CustomAdapter extends BaseAdapter {
         speciality.setText(doctor.getSpeciality());
         currency.setText(doctor.getCurrency());
         rate.setText(String.valueOf(doctor.getRate()));
+
+        if(doctor.getId() == null) {
+            //convertView = inflater.inflate(R.layout.empty_row, null);
+            convertView.setVisibility(View.GONE);
+        }
 
         return convertView;
     }
