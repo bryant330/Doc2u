@@ -81,6 +81,8 @@ public class CustomAdapter extends BaseAdapter {
         if(doctor.getId() == null) {
             //convertView = inflater.inflate(R.layout.empty_row, null);
             convertView.setVisibility(View.GONE);
+        } else {
+            convertView.setVisibility(View.VISIBLE);
         }
 
         return convertView;

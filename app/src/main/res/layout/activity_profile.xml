@@ -23,10 +23,9 @@
             android:layout_alignParentLeft="true"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <!-- Recommendation -->
             <TextView
@@ -34,8 +33,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:textSize="30sp"
-                android:textAlignment="center"/>
+                android:textSize="14sp"
+                android:textStyle="normal|bold"
+                android:textAlignment="center" />
 
             <!-- Schedule -->
             <TextView
@@ -44,13 +44,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_below="@+id/recommendation"
-                android:textSize="26sp"
-                android:textAlignment="center"/>
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:textStyle="normal|bold" />
 
         </LinearLayout>
-
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -67,7 +65,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_alignStart="@+id/thumbnail"
-            android:textSize="24sp" />
+            android:textSize="14sp" />
 
         <!-- Area -->
         <TextView
@@ -107,7 +105,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/experience"
-            android:layout_marginTop="5dip" />
+            android:layout_marginTop="5dip"
+            android:textAlignment="textStart" />
 
         <!-- Location -->
         <TextView
@@ -115,8 +114,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/description"
-            android:text="Location on maps"
-            android:layout_marginTop="5dip" />
+            android:text="Location on map:"
+            android:layout_marginTop="5dip"
+            android:textStyle="normal|italic" />
     </LinearLayout>
 
     <!-- Map -->
